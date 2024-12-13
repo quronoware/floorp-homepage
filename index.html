@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport">
+        <title>Floorp Home</title>
+        <link rel="icon" href="files/logo_ico.ico">
+        <style>
+            @font-face {
+                font-family: "Commissioner";
+                src: url(files/Commissioner-Light.ttf);
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: "Commissioner";
+                color: white;
+            }
+            html {
+                background-color: rgb(28,27,34);
+            }
+            .master_container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                text-align: center;
+                z-index: 2;
+            }
+            .shortcut {
+                display: inline-block;
+                margin: 10px;
+            }
+            .shortcut_button {
+                padding: 10px;
+                background-color: rgb(43,42,51);
+                border: none;
+                border-radius: 16px;
+                box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.06);
+                transition: 0.2s;
+            }
+            .shortcut_button:hover {
+                background-color: rgb(73,72,81);
+                box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.12);
+            }
+            img {
+                filter: grayscale(100%);
+                transition: 0.2s;
+            }
+            .shortcut_button:hover > img {
+                filter: grayscale(0%);
+            }
+            #timeDisplay {
+                font-size: 75px;
+                margin-bottom: 25px;
+                text-shadow: 0px 0px 42px rgba(255, 255, 255, 0.75);
+            }
+            #floorpLogo {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0.225;
+                filter: drop-shadow(0px 0px 42px rgba(180, 143, 255, 0.765));
+                z-index: 1;
+            }
+            #backgroundCover {
+                position: fixed;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+                background-image: linear-gradient(to top, rgb(28, 27, 34), rgba(0, 0, 0, 0), rgb(28, 27, 34));
+            } 
+            #backgroundGrid {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -2;
+                opacity: 0.2;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="floorpLogo" src="files/images/logo.png" width="400px" height="400px">
+        <div class="master_container">
+            <h1 id="timeDisplay">00:00</h1>
+            <div class="shortcut_container">
+                <div class="shortcut">
+                    <a href="https://www.youtube.com" target="_blank"><button class="shortcut_button"><img src="files/images/logo_youtube.png" width="64px" height="64px"></button></a>
+                </div>
+                <div class="shortcut">
+                    <a href="https://github.com" target="_blank"><button class="shortcut_button"><img src="files/images/logo_github.png" width="64px" height="64px"></button></a>
+                </div>
+                <div class="shortcut">
+                    <a href="https://reddit.com" target="_blank"><button class="shortcut_button"><img src="files/images/logo_reddit.png" width="64px" height="64px"></button></a>
+                </div>
+                <div class="shortcut">
+                    <a href="https://duck.ai" target="_blank"><button class="shortcut_button"><img src="files/images/logo_ddg.png" width="64px" height="64px"></button></a>
+                </div>
+                <div class="shortcut">
+                    <a href="https://chess.com" target="_blank"><button class="shortcut_button"><img src="files/images/logo_chess.png" width="64px" height="64px"></button></a>
+                </div>
+                <div class="shortcut">
+                    <a href="https://keep.google.com" target="_blank"><button class="shortcut_button"><img src="files/images/logo_keep.png" width="64px" height="64px"></button></a>
+                </div>
+                <div class="shortcut">
+                    <a href="https://student.psu.ru" target="_blank"><button class="shortcut_button"><img style="border-radius: 8px;" src="files/images/logo_psu.jpg" width="64px" height="64px"></button></a>
+                </div>
+            </div>
+        </div>
+        <div id="backgroundCover"></div>
+        <video id="backgroundGrid" src="files/grid.mp4" muted autoplay loop></video>
+        <script src="files/javascrip.js"></script>
+    </body>
+</html>
